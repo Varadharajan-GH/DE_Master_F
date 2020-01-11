@@ -1,5 +1,4 @@
-﻿Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following 
@@ -8,12 +7,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("DE_Master_F")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("DE_Master_F")> 
-<Assembly: AssemblyCopyright("Copyright ©  2018")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyTitle("DE_Master_F")>
+<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyProduct("DE_Master_F")>
+<Assembly: AssemblyCopyright("Copyright ©  2018")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
@@ -32,4 +31,4 @@ Imports System.Runtime.InteropServices
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
 <Assembly: AssemblyVersion("13.8.*")>
-<Assembly: AssemblyFileVersion("13.8")>
+<Assembly: AssemblyFileVersion("13.8.1")>

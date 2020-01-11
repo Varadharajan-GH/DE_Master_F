@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Xml
 Imports DEM_FCR_Library
+Imports System.Reflection
 
 Structure Log
     Dim System_Type As String
@@ -3199,8 +3200,7 @@ lbl_deleted:
         Dim sbAbout As New Text.StringBuilder
 
         sbAbout.AppendLine(ProductName)
-        sbAbout.AppendLine("Version " & ProductVersion)
-        sbAbout.AppendLine("Build : 2001092235")
+        sbAbout.AppendLine("Version " & My.Application.Info.Version.ToString)
         MsgBox(sbAbout.ToString)
     End Sub
 
