@@ -1,7 +1,6 @@
 ﻿Imports System.IO
 Imports System.Xml
 Imports DEM_FCR_Library
-Imports System.Reflection
 
 Structure Log
     Dim System_Type As String
@@ -3070,7 +3069,7 @@ lbl_deleted:
             If attr IsNot Nothing Then Continue For
             Dim tnod As XmlNode = nod.SelectSingleNode("UT_CODE")
             If tnod IsNot Nothing Then Continue For
-            count = count + 1
+            count += 1
         Next
         Return count.ToString
     End Function
@@ -3167,7 +3166,7 @@ lbl_deleted:
             UTC = Nothing
             Try
                 UTC = cit.SelectSingleNode("UT_CODE")
-            Catch ex As Exception
+            Catch
             End Try
             If UTC IsNot Nothing Then
                 Continue For
@@ -3176,21 +3175,24 @@ lbl_deleted:
             FCI = Nothing
             Try
                 FCI = cit.SelectSingleNode("FULL_CI_INFO")
-            Catch ex As Exception
+            Catch
             End Try
 
             If FCI Is Nothing Then
-                subLoadRefs(xnlCitations, lstRefNum(i), "Next")
-                MsgBox("Complete this Citation")
-                Return False
+                If FCI.Attributes("type").Value <> "Non-Traditional Reference" Then
+                    subLoadRefs(xnlCitations, lstRefNum(i), "Next")
+                    MsgBox("Complete this Citation")
+                    Return False
+                End If
             End If
 
             If String.IsNullOrWhiteSpace(FCI.InnerText) Then
-                subLoadRefs(xnlCitations, lstRefNum(i), "Next")
-                MsgBox("Complete this Citation")
-                Return False
+                If FCI.Attributes("type").Value <> "Non-Traditional Reference" Then
+                    subLoadRefs(xnlCitations, lstRefNum(i), "Next")
+                    MsgBox("Complete this Citation")
+                    Return False
+                End If
             End If
-
             i += 1
         Next
         Return True
